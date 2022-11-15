@@ -74,7 +74,7 @@ int main()
 
 void alta()
 {
-	printf("¿Cuantos registros desea dar de alta? \n");
+	printf("Cuantos registros desea dar de alta? \n");
 	scanf_s("%d", &registro);
 
 	item = new int[registro];
@@ -82,6 +82,7 @@ void alta()
 	nombre = new string[registro];
 	descripcion = new string[registro];
 	genero = new string[registro];
+	caracteristicas = new string[registro];
 	clasificacion = new string[registro];
 	precio = new float[registro];
 	iva = new float[registro];
@@ -137,7 +138,7 @@ void alta()
 			break;
 		}
 
-		printf("Ingrese el genero del articulo\n 1.-Accion\n 2.-Aventura\n 3.-Deportes\n 4.-Estrategia\n 5.-Simulación\n 6.-Musical\n"); //Género
+		printf("Ingrese el genero del articulo\n 1.-Accion\n 2.-Aventura\n 3.-Deportes\n 4.-Estrategia\n 5.-Simulacion\n 6.-Musical\n"); //Género
 		scanf_s("%d", &opcion3);
 		switch (opcion3)
 		{
@@ -179,13 +180,26 @@ void alta()
 		getline(cin, caracteristicas[i]);
 
 		printf("Ingrese el precio del articulo:\n"); //Precios
-
 		scanf_s("%f", &precio[i]);
 		iva[i] = precio[i] * 0.16;
 		total[i] = precio[i] + iva[i];
 		system("pause");
 	}
-
+	system("pause");
+	system("cls");
+	
+	if ((registro - 1) == i)//registro extra
+	{
+		{
+			int desicion;
+			printf("Desea dar de alta otro registro?\n si=1 \n");
+			scanf_s("%d", &desicion);
+			if (desicion == 1)
+			{
+				registro = registro + 1;
+			}
+		}
+	}
 }
 
 void eliminar()
@@ -223,16 +237,19 @@ void lista()
 				case 1: //Todos
 					if (clasificacion[i] == "Todos")
 					{
-						printf("Numero de articulo: %d \n", item[i]);
-						printf("Nombre: %s \n", nombre[i].c_str());
-						printf("Fecha: %d \n", fecha[i]);
-						printf("Clasificacion: %s \n", clasificacion[i].c_str());
-						printf("Caracteristicas: %s \n", caracteristicas[i].c_str());
-						printf("Descripcion: %s \n", descripcion[i].c_str());
-						printf("Genero: %s \n", genero[i].c_str());
-						printf("Precio Unitario: %f \n", precio[i]);
-						printf("IVA: %f \n", iva[i]);
-						printf("Total: %f \n", total[i]);
+						if (item[i] != 0)
+						{
+							printf("Numero de articulo: %d \n", item[i]);
+							printf("Nombre: %s \n", nombre[i].c_str());
+							printf("Fecha: %d \n", fecha[i]);
+							printf("Clasificacion: %s \n", clasificacion[i].c_str());
+							printf("Caracteristicas: %s \n", caracteristicas[i].c_str());
+							printf("Descripcion: %s \n", descripcion[i].c_str());
+							printf("Genero: %s \n", genero[i].c_str());
+							printf("Precio Unitario: %f \n", precio[i]);
+							printf("IVA: %f \n", iva[i]);
+							printf("Total: %f \n", total[i]);
+						}
 					}
 					system("pause");
 					break;
@@ -240,16 +257,19 @@ void lista()
 				case 2: //Adolescentes
 					if (clasificacion[i] == "Adolescentes")
 					{
-						printf("Numero de articulo: %d \n", item[i]);
-						printf("Nombre: %s \n", nombre[i].c_str());
-						printf("Fecha: %d \n", fecha[i]);
-						printf("Clasificacion: %s \n", clasificacion[i].c_str());
-						printf("Caracteristicas: %s \n", caracteristicas[i].c_str());
-						printf("Descripcion: %s \n", descripcion[i].c_str());
-						printf("Genero: %s \n", genero[i].c_str());
-						printf("Precio Unitario: %f \n", precio[i]);
-						printf("IVA: %f \n", iva[i]);
-						printf("Total: %f \n", total[i]);
+						if (item[i] != 0)
+						{
+							printf("Numero de articulo: %d \n", item[i]);
+							printf("Nombre: %s \n", nombre[i].c_str());
+							printf("Fecha: %d \n", fecha[i]);
+							printf("Clasificacion: %s \n", clasificacion[i].c_str());
+							printf("Caracteristicas: %s \n", caracteristicas[i].c_str());
+							printf("Descripcion: %s \n", descripcion[i].c_str());
+							printf("Genero: %s \n", genero[i].c_str());
+							printf("Precio Unitario: %f \n", precio[i]);
+							printf("IVA: %f \n", iva[i]);
+							printf("Total: %f \n", total[i]);
+						}
 					}
 					system("pause");
 					break;
@@ -257,16 +277,19 @@ void lista()
 				case 3: //Maduro +17
 					if (clasificacion[i] == "Maduro +17")
 					{
-						printf("Numero de articulo: %d \n", item[i]);
-						printf("Nombre: %s \n", nombre[i].c_str());
-						printf("Fecha: %d \n", fecha[i]);
-						printf("Clasificacion: %s \n", clasificacion[i].c_str());
-						printf("Caracteristicas: %s \n", caracteristicas[i].c_str());
-						printf("Descripcion: %s \n", descripcion[i].c_str());
-						printf("Genero: %s \n", genero[i].c_str());
-						printf("Precio Unitario: %f \n", precio[i]);
-						printf("IVA: %f \n", iva[i]);
-						printf("Total: %f \n", total[i]);
+						if (item[i] != 0)
+						{
+							printf("Numero de articulo: %d \n", item[i]);
+							printf("Nombre: %s \n", nombre[i].c_str());
+							printf("Fecha: %d \n", fecha[i]);
+							printf("Clasificacion: %s \n", clasificacion[i].c_str());
+							printf("Caracteristicas: %s \n", caracteristicas[i].c_str());
+							printf("Descripcion: %s \n", descripcion[i].c_str());
+							printf("Genero: %s \n", genero[i].c_str());
+							printf("Precio Unitario: %f \n", precio[i]);
+							printf("IVA: %f \n", iva[i]);
+							printf("Total: %f \n", total[i]);
+						}
 					}
 					system("pause");
 					break;
@@ -274,16 +297,19 @@ void lista()
 				case 4: //Adultos unicamente +18
 					if (clasificacion[i] == "Adultos unicamente +18")
 					{
-						printf("Numero de articulo: %d \n", item[i]);
-						printf("Nombre: %s \n", nombre[i].c_str());
-						printf("Fecha: %d \n", fecha[i]);
-						printf("Clasificacion: %s \n", clasificacion[i].c_str());
-						printf("Caracteristicas: %s \n", caracteristicas[i].c_str());
-						printf("Descripcion: %s \n", descripcion[i].c_str());
-						printf("Genero: %s \n", genero[i].c_str());
-						printf("Precio Unitario: %f \n", precio[i]);
-						printf("IVA: %f \n", iva[i]);
-						printf("Total: %f \n", total[i]);
+						if (item[i] != 0)
+						{
+							printf("Numero de articulo: %d \n", item[i]);
+							printf("Nombre: %s \n", nombre[i].c_str());
+							printf("Fecha: %d \n", fecha[i]);
+							printf("Clasificacion: %s \n", clasificacion[i].c_str());
+							printf("Caracteristicas: %s \n", caracteristicas[i].c_str());
+							printf("Descripcion: %s \n", descripcion[i].c_str());
+							printf("Genero: %s \n", genero[i].c_str());
+							printf("Precio Unitario: %f \n", precio[i]);
+							printf("IVA: %f \n", iva[i]);
+							printf("Total: %f \n", total[i]);
+						}
 					}
 					system("pause");
 					break;
@@ -431,201 +457,120 @@ void lista()
 
 void modificar()
 {
-	int modificar,opc2,opc3;
+	int modificar,opc1,opc2,opc3;
 	system("cls");
-
-	//Ingresar el switch de modificacion
-	
-	printf("Opcion a modificar:\n 1.Nombre\n 2.-Fecha de lanzamiento 3.-Clasificacion\n 4.-Genero\n 5.-Caracteristicas\n 6.-Descripcion\n 7.-Precio\n");
-	scanf_s("%d", &opcion4);
-	switch (opcion4)
+	do
 	{
-	case 1: //Nombre
-		do
+		printf("Ingrese el numero de articulo a modificar\n");
+		scanf_s("%d", &modificar);
+	} while (modificar > 0);
+	for (int i = 0; i < registro; i++)
+	{
+		if (modificar == item[i])
+		printf("Opcion a modificar:\n 1.Nombre\n 2.-Fecha de lanzamiento 3.-Clasificacion\n 4.-Genero\n 5.-Caracteristicas\n 6.-Descripcion\n 7.-Precio\n");
+		scanf_s("%d", &opcion4);
+		switch (opcion4)
 		{
-			printf("Ingrese el numero de articulo a modificar\n");
-			scanf_s("%d", &modificar);
-		} while (modificar > 0);
+		case 1: //Nombre
+			printf("Ingrese el nombre del articulo:\n");
+			cin.ignore();
+			getline(cin, nombre[i]);
+			break;
 
-		for (int i = 0; i < registro; i++)
-		{
-			if (modificar == item[i])
+		case 2: //Fecha
+			printf("Ingrese el a%o de lanzamiento:\n", 164);
+			scanf_s("%d", &fecha[i]);
+			break;
+
+		case 3: //Clasificacion
+			printf("Modifique la clasificacion\n 1.-Todos\n 2.-Adolescentes\n 3.-Maduro +17\n 4.-Adultos unicamente +18\n");
+			scanf_s("%d", &opc2);
+			switch (opc2)
 			{
-				printf("Ingrese el nombre del articulo:\n");
-				cin.ignore();
-				getline(cin, nombre[i]);
-			}
-		}
-		system("pause");
-		break;
-
-	case 2: //Fecha
-		do
-		{
-			printf("Ingrese el numero de articulo a modificar\n");
-			scanf_s("%d", &modificar);
-		} while (modificar > 0);
-
-		for (int i = 0; i < registro; i++)
-		{
-			if (modificar == item[i])
-			{
-				printf("Ingrese el a%o de lanzamiento:\n", 164);
-				scanf_s("%d", &fecha[i]);
-			}
-		}
-		system("pause");
-		break;
-
-	case 3: //Clasificacion
-		do
-		{
-			printf("Ingrese el numero de articulo a modificar\n");
-			scanf_s("%d", &modificar);
-		} while (modificar > 0);
-		for (int i = 0; i < registro; i++)
-		{
-			if (modificar == item[i])
-			{
-				printf("Modifique la clasificacion\n 1.-Todos\n 2.-Adolescentes\n 3.-Maduro +17\n 4.-Adultos unicamente +18\n");
-				scanf_s("%d", &opc2);
-				switch (opc2)
-				{
-				case 1:
-					clasificacion[i] = "Todos\n";
-					system("pause");
-					break;
-				case 2:
-					clasificacion[i] = "Adolescentes\n";
-					system("pause");
-					break;
-				case 3:
-					clasificacion[i] = "Maduro +17\n";
-					system("pause");
-					break;
-				case 4:
-					clasificacion[i] = "Adultos unicamente +18\n";
-					system("pause");
-					break;
-				default:
-					printf("Opción invalida\n");
-					break;
-				}
+			case 1:
+				clasificacion[i] = "Todos\n";
 				system("pause");
-			}
-		}
-		system("pause");
-		break;
-
-	case 4://Genero
-		do
-		{
-			printf("Ingrese el numero de articulo a modificar\n");
-			scanf_s("%d", &modificar);
-		} while (modificar > 0);
-		for (int i = 0; i < registro; i++)
-		{
-			if (modificar == item[i])
-			{
-				printf("Modifique el genero\n 1.-Accion\n 2.-Aventura\n 3.-Deportes\n 4.-Estrategia\n 5.-Simulación\n 6.-Musical\n");
-				scanf_s("%d", &opc3);
-				switch (opc3)
-				{
-				case 1:
-					genero[i] = "Accion\n";
-					system("pause");
-					break;
-				case 2:
-					genero[i] = "Aventura\n";
-					system("pause");
-					break;
-				case 3:
-					genero[i] = "Deportes\n";
-					system("pause");
-					break;
-				case 4:
-					genero[i] = "Estrategia\n";
-					system("pause");
-					break;
-				case 5:
-					genero[i] = "Simulacion\n";
-					system("pause");
-					break;
-				case 6:
-					genero[i] = "Musical\n";
-					system("pause");
-					break;
-				default:
-					printf("Opción invalida\n");
-					break;
-				}
+				break;
+			case 2:
+				clasificacion[i] = "Adolescentes\n";
 				system("pause");
+				break;
+			case 3:
+				clasificacion[i] = "Maduro +17\n";
+				system("pause");
+				break;
+			case 4:
+				clasificacion[i] = "Adultos unicamente +18\n";
+				system("pause");
+				break;
+			default:
+				printf("Opción invalida\n");
+				break;
 			}
-		}
-		system("pause");
-		break;
+			break;
 
-	case 5: //Caracteristicas
-		do
-		{
-			printf("Ingrese el numero de articulo a modificar\n");
-			scanf_s("%d", &modificar);
-		} while (modificar > 0);
+		case 4://Genero
 
-		for (int i = 0; i < registro; i++)
-		{
-			if (modificar == item[i])
+			printf("Modifique el genero\n 1.-Accion\n 2.-Aventura\n 3.-Deportes\n 4.-Estrategia\n 5.-Simulación\n 6.-Musical\n");
+			scanf_s("%d", &opc3);
+			switch (opc3)
 			{
-				printf("Ingrese las caracteristicas del articulo:\n");
-				cin.ignore();
-				getline(cin, caracteristicas[i]);
+			case 1:
+				genero[i] = "Accion\n";
+				system("pause");
+				break;
+			case 2:
+				genero[i] = "Aventura\n";
+				system("pause");
+				break;
+			case 3:
+				genero[i] = "Deportes\n";
+				system("pause");
+				break;
+			case 4:
+				genero[i] = "Estrategia\n";
+				system("pause");
+				break;
+			case 5:
+				genero[i] = "Simulacion\n";
+				system("pause");
+				break;
+			case 6:
+				genero[i] = "Musical\n";
+				system("pause");
+				break;
+			default:
+				printf("Opción invalida\n");
+				break;
 			}
+			break;
+
+		case 5: //Caracteristicas
+			printf("Ingrese las caracteristicas del articulo:\n");
+			cin.ignore();
+			getline(cin, caracteristicas[i]);
+			break;
+
+		case 6: //Descripcion
+			printf("Ingrese la descripcion del articulo:\n");
+			cin.ignore();
+			getline(cin, descripcion[i]);
+			break;
+
+		case 7: //Precio
+			printf("Ingrese el precio del articulo:\n");
+			scanf_s("%f", &precio[i]);
+			iva[i] = precio[i] * 0.16;
+			total[i] = precio[i] + iva[i];
+			break;
+
+		default:
+			printf("Opcion invalida, intente de nuevo...\n");
+			break;
+			system("pause");
+			return modificar();
 		}
-		system("pause");
-		break;
-
-	case 6: //Descripcion
-		do
-		{
-			printf("Ingrese el numero de articulo a modificar\n");
-			scanf_s("%d", &modificar);
-		} while (modificar > 0);
-
-		for (int i = 0; i < registro; i++)
-		{
-			if (modificar == item[i])
-			{
-				printf("Ingrese la descripcion del articulo:\n");
-				cin.ignore();
-				getline(cin, descripcion[i]);
-			}
-		}
-		system("pause");
-		break;
-
-	case 7: //Precio
-		do
-		{
-			printf("Ingrese el numero de articulo a modificar\n");
-			scanf_s("%d", &modificar);
-		} while (modificar > 0);
-		for (int i = 0; i < registro; i++)
-		{
-			if (modificar == item[i])
-			{
-				printf("Ingrese el precio del articulo:\n");
-				scanf_s("%f", &precio[i]);
-				iva[i] = precio[i] * 0.16;
-				total[i] = precio[i] + iva[i];
-			}
-		}
-		system("pause");
-		break;
-
-	default:
-		printf("Opcion invalida, intente de nuevo...\n");
 	}
-	system("pause");
 }
 
 void archivo()
