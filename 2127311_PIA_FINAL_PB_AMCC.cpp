@@ -19,7 +19,7 @@ int opcion2, opcion3, opcion4, desicion, n=1;
 void alta();
 void eliminar();
 void lista();
-void modificar();
+void modificacion();
 void archivo();
 
 int main()
@@ -38,7 +38,7 @@ int main()
 		break;
 
 	case 2: //Modificar Articulo
-		modificar();
+		modificacion();
 		system("pause");
 		return main();
 		break;
@@ -184,12 +184,11 @@ void alta()
 		iva[i] = precio[i] * 0.16;
 		total[i] = precio[i] + iva[i];
 		system("pause");
-	}
-	system("pause");
-	system("cls");
 	
-	if ((registro - 1) == i)//registro extra
-	{
+		system("pause");
+		system("cls");
+	
+		if ((registro - 1) == i)//registro extra
 		{
 			int desicion;
 			printf("Desea dar de alta otro registro?\n si=1 \n");
@@ -455,9 +454,10 @@ void lista()
 	system("cls");
 }
 
-void modificar()
+void modificacion()
 {
-	int modificar,opc1,opc2,opc3;
+	int modificar,
+	int opc1,opc2,opc3;
 	system("cls");
 	do
 	{
@@ -568,7 +568,7 @@ void modificar()
 			printf("Opcion invalida, intente de nuevo...\n");
 			break;
 			system("pause");
-			return modificar();
+			return modificacion();
 		}
 	}
 }
