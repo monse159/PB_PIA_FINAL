@@ -183,12 +183,11 @@ void alta()
 		scanf_s("%f", &precio[i]);
 		iva[i] = precio[i] * 0.16;
 		total[i] = precio[i] + iva[i];
-		system("pause");
 	
 		system("pause");
 		system("cls");
 	
-		if ((registro - 1) == i)//registro extra
+		if ((registro - 1) == i)//Registro extra
 		{
 			int desicion;
 			printf("Desea dar de alta otro registro?\n si=1 \n");
@@ -222,12 +221,31 @@ void lista()
 	do
 	{
 		system("cls");
-		printf("1.-Clasificacion\n 2.-Genero\n 3.-Salir\n");
+		printf("1.-Articulos Vigentes\n 2.-Clasificacion\n 3.-Genero\n 4.-Salir\n");
 		scanf_s("%d", &op2);
 		system("cls");
 		switch (op2)
 		{
-		case 1: //Clasificacion
+		case 1: //Lista po articulos Vigentes
+			for (int i = 0; i < registros; i++)
+			{
+				if (item[i] != 0)
+				{
+					printf("ARTICULO: %d \n", item[i]);
+					printf("Nombre: %s \n", name[i].c_str());
+					printf("A%co: %d \n", 164, year[i]);
+					printf("Descripcion: %s\n", descr[i].c_str());
+					printf("Clasificacion: %s\n", clas[i].c_str());
+					printf("Caracteristicas: %s\n", caract[i].c_str());
+					printf("Genero: %s\n", genre[i].c_str());
+					printf("subtotal: %f \n", subtotal[i]);
+					printf("iva: %f \n", iva[i]);
+					printf("total: %f \n ", total[i]);
+				}
+			}
+			system("pause");
+			break;
+		case 2: //Lista por clasificacion
 			printf("Ingrese la opcion deseada de busqueda\n 1.-Todos\n 2.-Adolescentes\n 3.-Maduro +17\n 4.-Adultos unicamente +18\n");
 			scanf_s("%d", &op3);
 			for (int i = 0; i < registro; i++)
@@ -323,7 +341,7 @@ void lista()
 			system("pause");
 			break;
 
-		case 2: //Genero
+		case 3: //Lista por genero
 			printf("Ingrese la opcion deseada de busqueda\n 1.-Accion\n 2.-Aventura\n 3.-Deportes\n 4.-Estrategia\n 5.-Simulación\n 6.-Musical\n");
 			scanf_s("%d", &op4);
 			for (int i = 0; i < registro; i++)
@@ -441,7 +459,7 @@ void lista()
 			system("pause");
 			break;
 
-		case 3:
+		case 4:
 			printf("Saliendo... \n");
 			system("pause");
 			break;
@@ -451,7 +469,7 @@ void lista()
 			system("pause");
 			break;
 		}
-	} while (op2 != 3);
+	} while (op2 != 4);
 	system("cls");
 }
 
@@ -459,12 +477,13 @@ void modificacion()
 {
 	int modificar;
 	int opc1,opc2,opc3;
-	system("cls");
+	
 	do
 	{
 		printf("Ingrese el numero de articulo a modificar\n");
 		scanf_s("%d", &modificar);
 	} while (modificar <= 0);
+	
 	for (int i = 0; i < registro; i++)
 	{
 		if (modificar == item[i])
@@ -490,19 +509,15 @@ void modificacion()
 			{
 			case 1:
 				clasificacion[i] = "Todos\n";
-				system("pause");
 				break;
 			case 2:
 				clasificacion[i] = "Adolescentes\n";
-				system("pause");
 				break;
 			case 3:
 				clasificacion[i] = "Maduro +17\n";
-				system("pause");
 				break;
 			case 4:
 				clasificacion[i] = "Adultos unicamente +18\n";
-				system("pause");
 				break;
 			default:
 				printf("Opción invalida\n");
@@ -518,27 +533,21 @@ void modificacion()
 			{
 			case 1:
 				genero[i] = "Accion\n";
-				system("pause");
 				break;
 			case 2:
 				genero[i] = "Aventura\n";
-				system("pause");
 				break;
 			case 3:
 				genero[i] = "Deportes\n";
-				system("pause");
 				break;
 			case 4:
 				genero[i] = "Estrategia\n";
-				system("pause");
 				break;
 			case 5:
 				genero[i] = "Simulacion\n";
-				system("pause");
 				break;
 			case 6:
 				genero[i] = "Musical\n";
-				system("pause");
 				break;
 			default:
 				printf("Opción invalida\n");
@@ -579,8 +588,7 @@ void archivo()
 	ofstream archivo; //Funcion para abrir el archivo
 	string nombrearchivo;
 
-	printf("Ingrese el nombre del archivo \n");
-	getline(cin,nombrearchivo);
+	nombrearchivo="ListaArticulos_Gameplay Force Store"
 
 	archivo.open(nombrearchivo.c_str(), ios::out);
 
@@ -591,12 +599,10 @@ void archivo()
 		exit(1);
 	}
 
-	archivo << "NUMERO DE ARTICULO" << "\t";
-	//asi le vas a poner con todos los punteros que tengas
 	for (int i = 0; i < registro; i++)
 		if(item[i]!=0)
-	{
-			archivo << "Dato\n" << i + 1 << endl;
+		{
+			archivo << "Videojuego\n" << i + 1 << endl;
 			archivo <<"\t"<< "item[i]" << endl;
 			archivo << "\t" << "Nombre:" << endl;
 			archivo << "\t" << "Fecha:" << endl;
@@ -607,6 +613,6 @@ void archivo()
 			archivo << "\t" << "Precio:" << endl;
 			archivo << "\t" << "IVA:" << endl;
 			archivo << "\t" << "Total:" << endl;
-	}
+		}
 	archivo.close();
 }
