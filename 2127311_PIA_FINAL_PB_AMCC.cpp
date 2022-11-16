@@ -464,7 +464,7 @@ void modificacion()
 	{
 		printf("Ingrese el numero de articulo a modificar\n");
 		scanf_s("%d", &modificar);
-	} while (modificar > 0);
+	} while (modificar <= 0);
 	for (int i = 0; i < registro; i++)
 	{
 		if (modificar == item[i])
