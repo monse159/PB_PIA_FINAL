@@ -224,6 +224,7 @@ void lista()
 		system("cls");
 		printf("1.-Clasificacion\n 2.-Genero\n 3.-Salir\n");
 		scanf_s("%d", &op2);
+		system("cls");
 		switch (op2)
 		{
 		case 1: //Clasificacion
