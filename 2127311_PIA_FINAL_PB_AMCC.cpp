@@ -456,7 +456,7 @@ void lista()
 
 void modificacion()
 {
-	int modificar,
+	int modificar;
 	int opc1,opc2,opc3;
 	system("cls");
 	do
