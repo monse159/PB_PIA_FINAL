@@ -468,7 +468,7 @@ void modificacion()
 	for (int i = 0; i < registro; i++)
 	{
 		if (modificar == item[i])
-		printf("Opcion a modificar:\n 1.Nombre\n 2.-Fecha de lanzamiento 3.-Clasificacion\n 4.-Genero\n 5.-Caracteristicas\n 6.-Descripcion\n 7.-Precio\n");
+		printf("Opcion a modificar:\n 1.Nombre\n 2.-Fecha de lanzamiento\n 3.-Clasificacion\n 4.-Genero\n 5.-Caracteristicas\n 6.-Descripcion\n 7.-Precio\n");
 		scanf_s("%d", &opcion4);
 		switch (opcion4)
 		{
