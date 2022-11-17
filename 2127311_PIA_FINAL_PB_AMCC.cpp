@@ -231,16 +231,16 @@ void lista()
 			{
 				if (item[i] != 0)
 				{
-					printf("ARTICULO: %d \n", item[i]);
-					printf("Nombre: %s \n", name[i].c_str());
-					printf("A%co: %d \n", 164, year[i]);
-					printf("Descripcion: %s\n", descr[i].c_str());
-					printf("Clasificacion: %s\n", clas[i].c_str());
-					printf("Caracteristicas: %s\n", caract[i].c_str());
-					printf("Genero: %s\n", genre[i].c_str());
-					printf("subtotal: %f \n", subtotal[i]);
-					printf("iva: %f \n", iva[i]);
-					printf("total: %f \n ", total[i]);
+					printf("Numero de articulo: %d \n", item[i]);
+					printf("Nombre: %s \n", nombre[i].c_str());
+					printf("Fecha: %d \n", fecha[i]);
+					printf("Clasificacion: %s \n", clasificacion[i].c_str());
+					printf("Caracteristicas: %s \n", caracteristicas[i].c_str());
+					printf("Descripcion: %s \n", descripcion[i].c_str());
+					printf("Genero: %s \n", genero[i].c_str());
+					printf("Precio Unitario: %f \n", precio[i]);
+					printf("IVA: %f \n", iva[i]);
+					printf("Total: %f \n", total[i]);
 				}
 			}
 			system("pause");
@@ -588,7 +588,7 @@ void archivo()
 	ofstream archivo; //Funcion para abrir el archivo
 	string nombrearchivo;
 
-	nombrearchivo="ListaArticulos_Gameplay Force Store"
+	nombrearchivo = "ListaArticulos_Gameplay Force Store"
 
 	archivo.open(nombrearchivo.c_str(), ios::out);
 
